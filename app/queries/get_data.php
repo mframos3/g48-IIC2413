@@ -1,19 +1,21 @@
-function Login()
-{
+<?php
+
     require("../config/conexion.php");
-    $username = trim($_POST['username'])
-    $password = trim($_POST['password'])
-    query = "SELECT COUNT(*) FROM Usuarios WHERE Usuarios.unombre = $usernane AND
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    $query = "SELECT COUNT(*) 
+             FROM Usuarios WHERE Usuarios.unombre = $username AND
               Usuarios.password = $password";
     $result = $db -> prepare($query);
 	$result -> execute();
 	$cantidad = $result -> fetchAll();
     if ($cantidad == 1){
-        header("main.php")
+        $msg = 'Bien';
+        echo "Bien!!!";
+        he
     }
     else{
-        header(index.php)
+        header ("login.php")
     }
 ?>
 
-}
