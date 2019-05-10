@@ -10,13 +10,16 @@
 	$result -> execute();
 	$cantidad = $result -> fetchAll();
     if ($cantidad == 1){
-        $msg = 'Bien';
-        echo "Bien!!!";
+        header ("Location:../main.php");
     }
     else{
+        header ("Location:../main.php");
         ?>
+        <!---------
         <h2>Los datos ingresados son incorrectos</h2>
-        <a href="login.php">Volver a intentar</a>;
+        <a href="../login.php">Volver a intentar</a>
+        -------->
+<?php
     }
 ?>
 
