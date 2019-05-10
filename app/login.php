@@ -4,7 +4,7 @@
 <input type="text" name="username">
 <br>
 <input type="password" name="password">
-<input type="submit" value="Submit">
+<input type="submit" value="Entrar">
 
 
 </form>
