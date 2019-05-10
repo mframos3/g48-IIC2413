@@ -8,3 +8,7 @@
 <!----
 Mostrar las cosas correspondientes a cuando no está loggeado
 ---->
+<form action="queries/wine_wineyards_query.php" method="Post">
+    <h2>Mostrar los vinos</h2>
+    <input type="submit" name="Consulta_vinos" value="Consultar">
+</form>
