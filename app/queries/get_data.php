@@ -12,10 +12,11 @@
     if ($cantidad == 1){
         $msg = 'Bien';
         echo "Bien!!!";
-        he
     }
     else{
-        header ("login.php")
+        ?>
+        <h2>Los datos ingresados son incorrectos</h2>
+        <a href="login.php">Volver a intentar</a>;
     }
 ?>
 
