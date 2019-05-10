@@ -2,7 +2,7 @@
 
 
 <a href="login.php">Iniciar sesión</a>
-<a href="sign_up.php">Registrarse</a>
+
 
 
 <!----
