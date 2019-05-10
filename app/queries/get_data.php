@@ -13,12 +13,10 @@
         header ("Location:../main.php");
     }
     else{
-        header ("Location:../main.php");
         ?>
-        <!---------
         <h2>Los datos ingresados son incorrectos</h2>
         <a href="../login.php">Volver a intentar</a>
-        -------->
+  
 <?php
     }
 ?>
