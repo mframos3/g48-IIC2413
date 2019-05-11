@@ -4,8 +4,6 @@
 
 
 <?php
-    session_start();
-    echo  $_SESSION['current_user_id'];
 
 ?>
 <a href="views/reserve_room.php"> Pedir una habitacion</a>
