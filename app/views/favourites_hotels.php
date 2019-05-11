@@ -1,2 +1,2 @@
 
-<a href="../main.php">Atrás</a>
+<a href="../main.php">Atras</a>

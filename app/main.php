@@ -2,7 +2,7 @@
 <h1>Reservar una habitacion</h1>
 
 
-<a href="views/reserve_rooom.php"> Pedir una habitación</a>
+<a href="views/reserve_room.php"> Pedir una habitacion</a>
 
 <h1>Actualizar estado de un sendero</h1>
 
