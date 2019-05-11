@@ -1,6 +1,6 @@
 <?php
 
-    require("../config/conexion.php");
+    require("../config/conexion_grupo48.php");
     $username = $_POST['username'];
     $password = $_POST['password'];
     $query = "SELECT *

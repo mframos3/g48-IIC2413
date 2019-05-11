@@ -1,5 +1,5 @@
 <?php
-    require("../config/conexion.php");
+    require("../config/conexion_grupo48.php");
     $query = "SELECT pnombre, snombre 
               FROM Parques, Senderos
               WHERE Parques.pid = Senderos.pid

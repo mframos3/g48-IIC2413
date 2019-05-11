@@ -1,5 +1,5 @@
 <?php
-    require("../config/conexion.php");
+    require("../config/conexion_grupo48.php");
     $query = "SELECT B.vnombre,B.rid, A.vino_nombre FROM Vinos A ,Vinas B WHERE A.vid = B.vid
          ";
 	$result = $db -> prepare($query);
