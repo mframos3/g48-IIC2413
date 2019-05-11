@@ -2,6 +2,12 @@
 <h1>Reservar una habitacion</h1>
 
 
+
+<?php
+    session_start();
+    echo  $_SESSION['current_user_id'];
+
+?>
 <a href="views/reserve_room.php"> Pedir una habitacion</a>
 
 <h1>Actualizar estado de un sendero</h1>
