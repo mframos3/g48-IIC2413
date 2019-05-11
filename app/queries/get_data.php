@@ -11,7 +11,7 @@
     $cantidad = $result -> fetchAll();
 
     if (sizeof($cantidad) == 1){
-        header ("Location:../main.php");
+        header ("Location: ../main.php");
     }
     else{
         ?>
