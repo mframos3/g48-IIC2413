@@ -24,7 +24,7 @@
     }
 }
     else{
-        echo "<h3>No hay habitaciones disponibles</h3>"
+        echo "<h3>No hay habitaciones disponibles</h3>";
     }
   ?>
     </table> 
