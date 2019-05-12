@@ -1,6 +1,6 @@
 <?php
 
-    require("../config/conexion_grupo49.php");
+    require("../config/conexionv2_grupo49.php");
     session_start();
     $uid = intval($_SESSION['current_user_id']);
     $query = "SELECT R.nombre_restaurant, R.direccion, R.descripcion_restaurant

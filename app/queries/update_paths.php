@@ -1,5 +1,5 @@
 <?php
-    require("../config/conexion_grupo48.php");
+    require("../config/conexionv2_grupo48.php");
     session_start();
     $current_user = intval($_SESSION['current_user_id']);
     $path_update = intval($_POST['path_input']);

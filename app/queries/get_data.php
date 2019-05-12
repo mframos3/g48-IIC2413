@@ -1,6 +1,6 @@
 <?php
 
-    require("../config/conexion_grupo48.php");
+    require("../config/conexionv2_grupo48.php");
     $mail = $_POST['username'];
     $password = $_POST['password'];
     $query = "SELECT *

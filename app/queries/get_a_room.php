@@ -1,6 +1,6 @@
 
 <?php 
-    require("../config/conexion_grupo49.php");
+    require("../config/conexionv2_grupo49.php");
     session_start();
     $user_id = $_SESSION['current_user_id'];
     $today = date("d-m-y");

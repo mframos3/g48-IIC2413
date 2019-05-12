@@ -1,5 +1,5 @@
 <?php   
-    require("../config/conexion_grupo49.php");
+    require("../config/conexionv2_grupo49.php");
     session_start();
     $current_user = $_SESSION['current_user_id'];
     $query = "SELECT *
