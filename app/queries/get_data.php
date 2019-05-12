@@ -1,6 +1,6 @@
 <?php
 
-    require("../config/conexion.php");
+    require("../config/conexion_grupo48.php");
     $username = $_POST['username'];
     $password = $_POST['password'];
     $query = "SELECT *
@@ -11,7 +11,9 @@
     $cantidad = $result -> fetchAll();
 
     if (sizeof($cantidad) == 1){
-        header ("Location:../main.php");
+        session_start();
+        $_SESSION["current_user_id"] = $cantidad[0][0];
+        header ("Location: ../main.php");
     }
     else{
         ?>
