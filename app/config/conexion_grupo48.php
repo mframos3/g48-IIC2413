@@ -1,8 +1,16 @@
 <?php
-  try {
-    require('data_grupo48.php'); #Pide las variables para conectarse a la base de datos.
-    $db = new PDO("pgsql:dbname=$DBgrupo;host=localhost;port=5432;user=$DBuser;password=$DBpassword");
-  } catch (Exception $e) {
-    echo "No se pudo conectar a la base de datos: $e";
-  }
-?>
+  require("data_grupo48.php");
+  function conectarBD() {
+    $host="host=localhost";
+    $port="port=5432";
+    $dbname="dbname=$DBgrupo";
+    $user="user=$DBuser";
+    $password="password=$DBpassword";
+
+    $db = pg_connect("$host $port $dbname $user $password");
+    if (!$db){
+      echo "Error: ".pg_last_error;
+    } else {
+
+      return $db;}
+  }?>
