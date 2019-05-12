@@ -9,6 +9,6 @@
 <input type="submit" value="Entrar">
 
 
-<a href="index.php">Atras</a>
 
 </form>
+<a href="index.php">Atras</a>

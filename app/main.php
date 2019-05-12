@@ -18,4 +18,4 @@
 <h1>Mis hoteles favoritos</h1>
 
 
-<a href="views/favourites_hotels.php">Ver mis hoteles favoritos</a>
+<a href="views/favourites_restaurants.php">Ver mis hoteles favoritos</a>
