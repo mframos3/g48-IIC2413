@@ -2,27 +2,29 @@
 
 <body>
     <section id="banner">
-        <h2><strong>Platos</strong>
+        <h2><strong>Vinos</strong>
         <br/></h2>
     </section>
 
-<?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
+<?php require_once ("../config/conexion_grupo48.php"); $conexion=conectarBD();?>
 <?php
-$restid = $_GET["restid"];
-$query = "SELECT nombre_plato, precio FROM Platos WHERE restid = $restid";
+$vid = $_GET["vid"];
+$query = "SELECT vino_nombre, cepa, vprecio FROM Vinos WHERE vid = $vid";
 $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
 $nr=pg_num_rows($resultado);
 if ($nr>0) {
     echo "<div class='table-wrapper'>
           <table>
             <thead>
-            <tr><th>Nombre Plato</th>
+            <tr><th>Nombre Vino</th>
+            <th>Cepa</th>
             <th>Precio</th>
             </thead>";
   echo "<tbody>";
         while($filas=pg_fetch_array($resultado)) {
-            echo "<td>".$filas["nombre_plato"]."</td>";
-            echo "<td>".$filas["precio"]."</td></tr>";
+            echo "<td>".$filas["vino_nombre"]."</td>";
+            echo "<td>".$filas["cepa"]."</td>";
+            echo "<td>".$filas["vprecio"]."</td></tr>";
             } echo "</tbody></table></div>";
 } else {echo "No hay datos";}
 ?>

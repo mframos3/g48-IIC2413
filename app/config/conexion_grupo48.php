@@ -1,11 +1,10 @@
 <?php
-  require("data_grupo48.php");
   function conectarBD() {
     $host="host=localhost";
     $port="port=5432";
-    $dbname="dbname=$DBgrupo";
-    $user="user=$DBuser";
-    $password="password=$DBpassword";
+    $dbname="dbname=grupo48";
+    $user="user=grupo48";
+    $password="password=grupo48";
 
     $db = pg_connect("$host $port $dbname $user $password");
     if (!$db){

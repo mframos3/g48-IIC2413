@@ -1,5 +1,4 @@
 <?php
-  require("data_grupo49.php");
   function conectarBD() {
     $host="host=localhost";
     $port="port=5432";
