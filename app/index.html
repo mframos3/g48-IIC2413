@@ -54,39 +54,14 @@
 						</form>
 					</div>
 					<div class="feature">
-							<h4>Para cada región, entregue la habitación que ha sido 
-								reservada más veces.</h4>
-							<form action="consultas/consulta_habitacion_mas_reservada.php" method="post">
+							<p>Infórmate de los senderos y atractivos de nuestros parques nacionales!</p>
+							<form action="queries/show_parks.php" method="post">
 								<input type="submit" value="Buscar">
 							</form>
 						</div>
 					<div class="feature">
-						<h4>Entregue todos los usuarios que han reservado la
-							habitación más barata en la región II.</h4>
-						<form action="consultas/consulta_habitacion_barata.php" method="post">
-							<input type="submit" value="Buscar">
-						</form>
-					</div>
-					<div class="feature">
-							<h4>Dado un id de reserva, muestra el nombre de usuario que 
-								hizo la reserva junto al monto total que paga por esa 
-								reserva.</h4>
-							<form action="consultas/consulta_reserva.php" method="post">
-								ID reserva:
-								<input type="integer" name="reserva">
-								<br/>
-								<br/><br/>
-								<input type="submit" value="Buscar">
-							</form>
-					</div>
-					<div class="feature">
-						<h4>Dado un número i, entrega la i-ésima habitación más cara.
-							En caso de empate muestre las dos.</h4>
-						<form action="consultas/consulta_habitacion_mas_cara.php" method="post">
-							Número i / i-ésima habitación más cara:
-							<input type="text" name="i">
-							<br/>
-							<br/><br/>
+						<p>Averigua sobre hoteles y sus habitaciones!</p>
+						<form action="queries/show_hotels.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
@@ -94,7 +69,7 @@
 			</div>
 		</section>
 
-		 <section id="three" class="wrapper">
+		<!-- <section id="three" class="wrapper">
 				<div class="inner">
 
 					<h2 id="content">Sample Content</h2>
