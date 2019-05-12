@@ -14,7 +14,7 @@
     if (sizeof($senderos) > 0){
         $regid = $senderos[0][0];
         $new_data_query = "UPDATE Registros
-                          SET estado = $new_state
+                          SET estado = '$new_state'
                           WHERE regid = $regid";
         $response = $db -> prepare($new_data_query);
         $response -> execute();

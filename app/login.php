@@ -1,7 +1,7 @@
 <h1>Ingresa tus datos</h1>
 
 <form action="queries/get_data.php" method="post">
-<h3>Nombre: </h3>
+<h3>Correo: </h3>
 <input type="text" name="username">
 <br>
 <h3> Contrase&ntilde;a</h3>

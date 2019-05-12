@@ -1,10 +1,10 @@
 <?php
 
     require("../config/conexion_grupo48.php");
-    $username = $_POST['username'];
+    $mail = $_POST['username'];
     $password = $_POST['password'];
     $query = "SELECT *
-             FROM usuarios WHERE unombre = '$username'
+             FROM usuarios WHERE correo = '$mail'
              AND password = '$password'";
     $result = $db -> prepare($query);
 	$result -> execute();
