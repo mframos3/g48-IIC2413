@@ -10,7 +10,7 @@
     $result = $db -> prepare($query);
 	$result -> execute();
     $response = $result -> fetchAll();
-    if (sizeof(response) > 0){
+    if (sizeof($response) > 0){
         echo "<h3>El restaurant seleccionado ya está entre tus favoritos</h3>";
     }
     else{
@@ -22,4 +22,4 @@
 
     }
 ?>
-<a href="../views/favourites_restaurants">Volver</a>
+<a href="../views/favourites_restaurants.php">Volver</a>
