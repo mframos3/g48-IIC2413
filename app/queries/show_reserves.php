@@ -8,7 +8,8 @@
 
 <?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
 <?php
-$uid = 1; #Después poner el usuario actual aquí
+session_start(); 
+$uid = intval($_SESSION["current_user_id"]);
 $query = "SELECT R.fecha_inicio, R.fecha_fin, O.nombre_hotel, H.nombre_habitacion, H.precio
           FROM Habitaciones H, Reservas R, Hoteles O
           WHERE R.uid = $uid AND R.habid = H.habid AND H.hid = O.hid";

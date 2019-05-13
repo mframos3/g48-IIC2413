@@ -4,7 +4,9 @@
     <section id="banner">
         <h2><strong>Perfil</strong>
         <br/></h2>
-        <p>Nombre?</p>
+        <p><strong>Nombre: <?php session_start(); 
+								$current_name = $_SESSION['current_user_name'];
+                echo $current_name; ?> </strong></p>
     </section>
     
     <section id="one" class="wrapper special">
@@ -23,13 +25,20 @@
 						</form>
 					</div>
 					<div class="feature">
-                        <p>Restaurantes Favoritos</p>
-					    <form action="../queries/get_restaurants.php" method="post">
+            <p>Restaurantes Favoritos</p>
+					  <form action="../queries/get_restaurants.php" method="post">
 							<input type="submit" value="Ver">
 						</form>
 					</div>	
 				</div>
 			</div>
-    </section>
-    
-<?php include('../templates/footer.html'); ?>
+	</section>
+	<br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action="main.php" method="post">
+            <input type="submit" value="Volver">
+      </ul>
+    </div>
+    </form>
+</body>
