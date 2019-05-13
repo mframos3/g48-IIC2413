@@ -5,11 +5,23 @@
         <h2><strong>Restaurantes</strong>
         <br/></h2>
         <p>Haz click al restaurante para ver sus platos.</p>
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline" action="show_restaurants.php" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" 
+                style="color:black" name="limitacion">
+                <input name="submit" type="submit">
+            </form>
+        </nav>
     </section>
 
 <?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
 <?php
-$query = "SELECT nombre_restaurant, direccion, rid, telefono, restid FROM Restaurantes";
+if (isset($_POST['submit'])) {
+    echo "<h1>Apretaste submit</h1>";
+    $limitacion = $_POST["limitacion"];
+    $query = "SELECT nombre_restaurant, direccion, rid, telefono, restid FROM Restaurantes WHERE nombre_restaurant LIKE '%$limitacion%'";
+} else {echo "<h1>No apretaste submit</h1>";
+    $query = "SELECT nombre_restaurant, direccion, rid, telefono, restid FROM Restaurantes";}
 $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
 $nr=pg_num_rows($resultado);
 if ($nr>0) {
