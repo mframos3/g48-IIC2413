@@ -6,7 +6,7 @@ session_start();
     <section id="banner">
         <h2><strong>Hoteles</strong>
         <br/></h2>
-        <p>Haz click al hotel para ver sus habitaciones.</p>
+        <p>Haz click en cada Hotel para ver sus Habitaciones.</p>
         <nav class="navbar navbar-light bg-light">
             <form class="form-inline" action="show_hotels.php" method="post">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" 
@@ -15,7 +15,6 @@ session_start();
             </form>
         </nav>
     </section>
-
 <?php require_once ("../config/conexion_grupo49.php"); $conexion = conectarBD();?>
 <?php
 if (isset($_POST['submit'])) {
@@ -51,7 +50,7 @@ if (isset($_SESSION["current_user_id"])) {
     <div class="12u$">
       <ul class="actions">
           <form action=<?php echo $s?> method="post">
-            <input type="submit" value="Volver">
+            <input type="submit" value="Volver", style="background:lightblue">
       </ul>
       </form>
     </div>

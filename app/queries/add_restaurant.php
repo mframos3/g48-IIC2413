@@ -27,12 +27,12 @@
     <div class="12u$">
       <ul class="actions">
           <form action="show_restaurants.php" method="post">
-            <input type="submit" value="Volver A Restaurantes">
+            <input type="submit" value="Volver A Restaurantes", style="background:lightblue">
       </ul>
       </form>
       <ul class="actions">
           <form action="../views/main.php" method="post">
-            <input type="submit" value="Volver A La Página Principal">
+            <input type="submit" value="Volver A La Página Principal", style="background:lightblue">
       </ul>
       </form>
     </div>

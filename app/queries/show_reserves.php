@@ -5,14 +5,14 @@
         <h2><strong>Reservas</strong>
         <br/></h2>
     </section>
-
 <?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
 <?php
 session_start(); 
 $uid = intval($_SESSION["current_user_id"]);
 $query = "SELECT R.fecha_inicio, R.fecha_fin, O.nombre_hotel, H.nombre_habitacion, H.precio
           FROM Habitaciones H, Reservas R, Hoteles O
-          WHERE R.uid = $uid AND R.habid = H.habid AND H.hid = O.hid";
+          WHERE R.uid = $uid AND R.habid = H.habid AND H.hid = O.hid
+          ORDER BY R.resvid DESC";
 $result = pg_query($conexion, $query) or die ("Error en la consulta!");
 $nr = pg_num_rows($result);
 if ($nr>0) {
@@ -35,12 +35,11 @@ if ($nr>0) {
             } echo "</tbody></table></div>";
 } else {echo "No hay datos!";}
 ?>
-
 <br><br>
   <div class="12u$">
       <ul class="actions">
           <form action="../views/profile.php" method="post">
-            <input type="submit" value="Volver">
+            <input type="submit" value="Volver", style="background:lightblue">
       </ul>
   </div>
   </form>

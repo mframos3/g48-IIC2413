@@ -16,48 +16,42 @@
 					<input type="submit" value="Cerrar Sesión">
 				</form>
         </section>
-######
 
-<h1>Actualizar estado de un sendero</h1>
-
-<a href="views/update_state_path.php">Ir a actualizar estado de un sendero</a>
-
-########
 		<!-- One -->
 		<section id="one" class="wrapper special">
 			<div class="inner">
 				<div class="features">
-					<div class="feature">
+					<div class="feature", style="background:lightcoral">
 						<p>Descubre restaurantes y conoce todos sus platos!</p>
 						<form action="../queries/show_restaurants.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
-					<div class="feature">
+					<div class="feature", style="background:lightblue">
 						<p>Conoce todas las agencias de turismo y los tours que ofrecen!</p>
 						<form action="../queries/show_agencies.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
-					<div class="feature">
+					<div class="feature", style="background:plum">
 							<p>Busca tus vinos favoritos en las viñas del país!</p>
 							<form action="../queries/show_vineyards.php" method="post">
 								<input type="submit" value="Buscar">
 							</form>
 						</div>
-					<div class="feature">
+					<div class="feature", style="background:lightsalmon">
 						<p>Elige tu tour de enoturismo ideal para conocer las viñas y vinos que quieras!</p>
 						<form action="../queries/show_enotours.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
-					<div class="feature">
+					<div class="feature", style="background:lightgreen">
 							<p>Infórmate de los senderos y atractivos de nuestros parques nacionales!</p>
 							<form action="../queries/show_parks.php" method="post">
 								<input type="submit" value="Buscar">
 							</form>
 						</div>
-					<div class="feature">
+					<div class="feature", style="background:rgb(252, 252, 86)">
 						<p>Averigua sobre hoteles y sus habitaciones!</p>
 						<form action="../queries/show_hotels.php" method="post">
 							<input type="submit" value="Buscar">

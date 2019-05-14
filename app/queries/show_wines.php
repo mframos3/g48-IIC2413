@@ -5,7 +5,6 @@
         <h2><strong>Vinos</strong>
         <br/></h2>
     </section>
-
 <?php require_once ("../config/conexion_grupo48.php"); $conexion=conectarBD();?>
 <?php
 $vid = $_GET["vid"];
@@ -32,7 +31,7 @@ if ($nr>0) {
     <div class="12u$">
       <ul class="actions">
           <form action="show_vineyards.php" method="post">
-            <input type="submit" value="Volver">
+            <input type="submit" value="Volver", style="background:lightblue">
       </ul>
       </form>
     </div>

@@ -5,7 +5,6 @@
         <h2><strong>Platos</strong>
         <br/></h2>
     </section>
-
 <?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
 <?php
 $restid = $_GET["restid"];
@@ -30,7 +29,7 @@ if ($nr>0) {
     <div class="12u$">
       <ul class="actions">
           <form action="show_restaurants.php" method="post">
-            <input type="submit" value="Volver">
+            <input type="submit" value="Volver", style="background:lightblue">
       </ul>
       </form>
     </div>
