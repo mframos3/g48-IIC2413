@@ -1,4 +1,6 @@
-<?php include('../templates/header.html');   ?>
+<?php include('../templates/header.html');   
+session_start();
+?>
 
 <body>
     <section id="banner">
@@ -23,7 +25,18 @@ if (isset($_POST['submit'])) {
 $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
 $nr=pg_num_rows($resultado);
 if ($nr>0) {
-    echo "<div class='table-wrapper'>
+    if (isset($_SESSION["current_user_id"])) {
+        echo "<div class='table-wrapper'>
+          <table>
+            <thead>
+            <tr><th>Nombre Restaurant</th>
+            <th>Dirección</th>
+            <th>Región</th>
+            <th>Teléfono</th>
+            <th>Guardar Como Favorito</th></tr>
+            </thead>";
+    } else {
+        echo "<div class='table-wrapper'>
           <table>
             <thead>
             <tr><th>Nombre Restaurant</th>
@@ -31,14 +44,30 @@ if ($nr>0) {
             <th>Región</th>
             <th>Teléfono</th></tr>
             </thead>";
+    }
   echo "<tbody>";
         while($filas=pg_fetch_array($resultado)) {
             echo "<tr><td><a href=show_menu.php?restid=",$filas["restid"],">".$filas["nombre_restaurant"]."</a></td>";
             echo "<td>".$filas["direccion"]."</td>";
             echo "<td>".strval(intval($filas["rid"]) + 1)."</td>";
-            echo "<td>".$filas["telefono"]."</td></tr>";
+            echo "<td>".$filas["telefono"]."</td>";
+            if (isset($_SESSION["current_user_id"])) {
+                echo "<td><a href=add_restaurant.php?restid_input=",$filas["restid"],">"."Guardar"."</a></td>"."</tr>";
+            }
             } echo "</tbody></table></div>";
 } else {echo "No hay datos";}
+if (isset($_SESSION["current_user_id"])) {
+    $s = "../views/main.php";
+} else {
+    $s = "../index.html";
+}
 ?>
-
-<?php include('../templates/footer.html'); ?>
+<br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action=<?php echo $s?> method="post">
+            <input type="submit" value="Volver">
+      </ul>
+      </form>
+    </div>
+</body>

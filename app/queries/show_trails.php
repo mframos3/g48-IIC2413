@@ -8,7 +8,8 @@
 
 <?php require_once ("../config/conexion_grupo48.php"); $conexion=conectarBD();?>
 <?php
-$uid = 1; #Después poner el usuario actual aquí
+session_start(); 
+$uid = intval($_SESSION["current_user_id"]);
 $query = "SELECT R.fentrada, R.fsalida, P.pnombre, S.snombre, R.estado
           FROM Senderos S, Registros R, Parques P
           WHERE R.uid = $uid AND R.sid = S.sid AND S.pid = P.pid";

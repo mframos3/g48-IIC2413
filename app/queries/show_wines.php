@@ -28,5 +28,12 @@ if ($nr>0) {
             } echo "</tbody></table></div>";
 } else {echo "No hay datos";}
 ?>
-
-<?php include('../templates/footer.html'); ?>
+<br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action="show_vineyards.php" method="post">
+            <input type="submit" value="Volver">
+      </ul>
+      </form>
+    </div>
+</body>

@@ -1,21 +1,31 @@
+<?php include('../templates/header.html');   ?>
 
-
-
-
-
-<!----
-Queda pendiente mostrar las habitaciones que ya están pedidas y/o mostrar las que están disponibles
----->
-
-<form action="../queries/get_a_room.php" method="Post">
-    <h2>Pide la habitacion</h2>
-    <h3>Ingresa el id de la habitación</h3>   
-
-<input type="number" min="1" step="1" pattern="\d+" name="habid_input" required />
-<br>
-<h3>Cantidad de días por la que se reserva</h3>
-<input type="number" min="1" step="1" pattern="\d+"name="duration_input" required />
-    <input type="submit" value="Reservar">
-</form>
-
-<a href="../main.php">Atras</a>
+<body>
+	<section id="banner">
+        <h2><strong>Reservar Habitación</strong>
+	</section>
+	
+    <section id="one" class="wrapper special">
+			<div class="inner">
+				<div class="features">
+                    <div class="feature", style="background:lightblue">
+                        <form action="../queries/get_a_room.php" method="Post">
+                        <input type='hidden' name='habid_input' value='<?php echo strval($_GET["habid"]);?>' required /> 
+                        <b>Duración de la Estadía (días):</b>
+                        <input type="number" min="1" step="1" pattern="\d+"name="duration_input" required />
+                        <br><br>  
+                        <input type="submit" value="Reservar">
+                        </form>
+					</div>	
+				</div>
+			</div>
+    </section>
+    <br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action="../queries/show_hotels.php" method="post">
+            <input type="submit" value="Volver A Hoteles">
+      </ul>
+    </div>
+    </form>
+</body>
