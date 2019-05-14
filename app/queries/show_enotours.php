@@ -39,7 +39,7 @@ if ($nr>0) {
 if (isset($_SESSION["current_user_id"])) {
     $s = "../views/main.php";
 } else {
-    $s = "../index.html";
+    $s = "../index.php";
 }
 ?>
 <br><br>
