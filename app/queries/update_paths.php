@@ -18,7 +18,7 @@
     <div class="12u$">
       <ul class="actions">
           <form action="show_trails.php" method="post">
-            <input type="submit" value="Volver">
+            <input type="submit" value="Volver", style="background:lightblue">
       </ul>
       </form>
     </div>

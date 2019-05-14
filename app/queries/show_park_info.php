@@ -5,7 +5,7 @@ $pid = intval($_GET["pid"]);
 
 <body>
     <section id="banner">
-        <h2><strong>Información del parque</strong>
+        <h2><strong>Información del Parque</strong>
         <br/></h2>
         <p>Senderos y Atractivos</p>
         <nav class="navbar navbar-light bg-light">
@@ -80,7 +80,7 @@ $pid = intval($_GET["pid"]);
     <div class="12u$">
       <ul class="actions">
           <form action="show_parks.php" method="post">
-            <input type="submit" value="Volver">
+            <input type="submit" value="Volver", style="background:lightblue">
       </ul>
       </form>
     </div>

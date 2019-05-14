@@ -24,12 +24,12 @@
     <div class="12u$">
       <ul class="actions">
           <form action="show_hotels.php" method="post">
-            <input type="submit" value="Volver A Hoteles">
+            <input type="submit" value="Volver A Hoteles", style="background:lightblue">
       </ul>
       </form>
       <ul class="actions">
           <form action="../views/main.php" method="post">
-            <input type="submit" value="Volver A La Página Principal">
+            <input type="submit" value="Volver A La Página Principal", style="background:lightblue">
       </ul>
       </form>
     </div>

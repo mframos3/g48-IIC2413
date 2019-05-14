@@ -5,7 +5,6 @@
         <h2><strong>Restaurantes Favoritos</strong>
         <br/></h2>
     </section>
-
 <?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
 <?php
 session_start(); 
@@ -31,12 +30,11 @@ if ($nr>0) {
             } echo "</tbody></table></div>";
 } else {echo "No hay datos!";}
 ?>
-
 <br><br>
   <div class="12u$">
       <ul class="actions">
           <form action="../views/profile.php" method="post">
-            <input type="submit" value="Volver">
+            <input type="submit" value="Volver", style="background:lightblue">
       </ul>
   </div>
   </form>
