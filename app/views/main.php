@@ -16,13 +16,7 @@
 					<input type="submit" value="Cerrar Sesión">
 				</form>
         </section>
-######
 
-<h1>Actualizar estado de un sendero</h1>
-
-<a href="views/update_state_path.php">Ir a actualizar estado de un sendero</a>
-
-########
 		<!-- One -->
 		<section id="one" class="wrapper special">
 			<div class="inner">

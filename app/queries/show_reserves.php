@@ -12,7 +12,8 @@ session_start();
 $uid = intval($_SESSION["current_user_id"]);
 $query = "SELECT R.fecha_inicio, R.fecha_fin, O.nombre_hotel, H.nombre_habitacion, H.precio
           FROM Habitaciones H, Reservas R, Hoteles O
-          WHERE R.uid = $uid AND R.habid = H.habid AND H.hid = O.hid";
+          WHERE R.uid = $uid AND R.habid = H.habid AND H.hid = O.hid
+          ORDER BY R.resvid DESC";
 $result = pg_query($conexion, $query) or die ("Error en la consulta!");
 $nr = pg_num_rows($result);
 if ($nr>0) {
