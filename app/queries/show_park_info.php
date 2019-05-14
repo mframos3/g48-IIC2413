@@ -48,5 +48,12 @@
     ?>
     </tr>
     </table>
-
-<?php include('../templates/footer.html'); ?>
+    <br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action="show_parks.php" method="post">
+            <input type="submit" value="Volver">
+      </ul>
+      </form>
+    </div>
+</body>

@@ -1,4 +1,6 @@
-<?php include('../templates/header.html');   ?>
+<?php include('../templates/header.html');   
+session_start();
+?>
 
 <body>
     <section id="banner">
@@ -27,6 +29,18 @@ if ($nr>0) {
             echo "<td>".$filas["tarifa"]."</td></tr>";
             } echo "</tbody></table></div>";
 } else {echo "No hay datos";}
+if (isset($_SESSION["current_user_id"])) {
+    $s = "../views/main.php";
+} else {
+    $s = "../index.html";
+}
 ?>
-
-<?php include('../templates/footer.html'); ?>
+<br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action=<?php echo $s?> method="post">
+            <input type="submit" value="Volver">
+      </ul>
+      </form>
+    </div>
+</body>

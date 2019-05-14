@@ -17,26 +17,11 @@
 				</form>
         </section>
 ######
-<h1>Reservar una habitacion</h1>
-
-
-
-<?php
-
-?>
-<a href="views/reserve_room.php"> Pedir una habitacion</a>
 
 <h1>Actualizar estado de un sendero</h1>
 
-
 <a href="views/update_state_path.php">Ir a actualizar estado de un sendero</a>
 
-
-
-<h1>Mis hoteles favoritos</h1>
-
-
-<a href="views/favourites_restaurants.php">Ver mis hoteles favoritos</a>
 ########
 		<!-- One -->
 		<section id="one" class="wrapper special">
@@ -44,37 +29,37 @@
 				<div class="features">
 					<div class="feature">
 						<p>Descubre restaurantes y conoce todos sus platos!</p>
-						<form action="queries/show_restaurants.php" method="post">
+						<form action="../queries/show_restaurants.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
 					<div class="feature">
 						<p>Conoce todas las agencias de turismo y los tours que ofrecen!</p>
-						<form action="queries/show_agencies.php" method="post">
+						<form action="../queries/show_agencies.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
 					<div class="feature">
 							<p>Busca tus vinos favoritos en las viñas del país!</p>
-							<form action="queries/show_vineyards.php" method="post">
+							<form action="../queries/show_vineyards.php" method="post">
 								<input type="submit" value="Buscar">
 							</form>
 						</div>
 					<div class="feature">
 						<p>Elige tu tour de enoturismo ideal para conocer las viñas y vinos que quieras!</p>
-						<form action="queries/show_enotours.php" method="post">
+						<form action="../queries/show_enotours.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
 					<div class="feature">
 							<p>Infórmate de los senderos y atractivos de nuestros parques nacionales!</p>
-							<form action="queries/show_parks.php" method="post">
+							<form action="../queries/show_parks.php" method="post">
 								<input type="submit" value="Buscar">
 							</form>
 						</div>
 					<div class="feature">
 						<p>Averigua sobre hoteles y sus habitaciones!</p>
-						<form action="queries/show_hotels.php" method="post">
+						<form action="../queries/show_hotels.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>

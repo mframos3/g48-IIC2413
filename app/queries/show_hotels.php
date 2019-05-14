@@ -1,4 +1,6 @@
-<?php include('../templates/header.html');   ?>
+<?php include('../templates/header.html');   
+session_start();
+?>
 
 <body>
     <section id="banner">
@@ -7,7 +9,7 @@
         <p>Haz click al hotel para ver sus habitaciones.</p>
     </section>
 
-<?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
+<?php require_once ("../config/conexion_grupo49.php"); $conexion = conectarBD();?>
 <?php
 $query = "SELECT nombre_hotel, direccion, rid, telefono, hid FROM Hoteles";
 $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
@@ -29,6 +31,18 @@ if ($nr>0) {
             echo "<td>".$filas["telefono"]."</td></tr>";
             } echo "</tbody></table></div>";
 } else {echo "No hay datos";}
+if (isset($_SESSION["current_user_id"])) {
+    $s = "../views/main.php";
+} else {
+    $s = "../index.html";
+}
 ?>
-
-<?php include('../templates/footer.html'); ?>
+<br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action=<?php echo $s?> method="post">
+            <input type="submit" value="Volver">
+      </ul>
+      </form>
+    </div>
+</body>

@@ -1,42 +1,36 @@
+<?php include('../templates/header.html');   ?>
 
 <?php 
     require("../config/conexionv2_grupo49.php");
     session_start();
-    $user_id = $_SESSION['current_user_id'];
-    $today = date("d-m-y");
-    $habid_required = intval($_POST["habid_input"]);
+    $user_id = intval($_SESSION['current_user_id']);
+    $today = date("Y-m-d");
     $duration_res = $_POST["duration_input"];
-    $query = "SELECT * FROM Reservas
-              WHERE habid=$habid_required AND fecha_fin >= $today";
-
-    # Verificamos si ya hay una reserva para hoy
-    
-    $result = $db -> prepare($query);
-	$result -> execute();
-    $habitaciones = $result -> fetchAll();
-    if (sizeof($habitaciones) == 0){ # Si es 0, entonces no hay reservas
-        $max_query = "SELECT MAX(resvid) FROM Reservas";  # Buscamos el maximo id
-        $response = $db -> prepare($max_query);
-        $response -> execute();
-        $max_value = $response -> fetchAll();
-        $new_id = intval($max_value[0]) + 1;
-        $insert_query = "INSERT INTO Reservas(resvid, uid, habid, fecha_inicio, fecha_fin)
-                        VALUES ($new_id, $user_id, $habid_required, $today, $today + interval
-                        '1' day * $duration_res)";
-        $insert_ = $db -> prepare($query);
-        $insert_ -> execute();
-        ?>
-        <h3>Se ha efectuado la reserva con exito </h3>
-        <?php
-    }
-    else {
-        ?>
-        <h3>La habitacion ya esta pedida</h3>
-        <?php
-    }
-
+    $final_date = date('Y-m-d', strtotime(' + '.strval($duration_res).' days'));
+    $habid_required = intval($_POST["habid_input"]);
+    $max_query = "SELECT MAX(resvid) FROM Reservas";  # Buscamos el máximo id
+    $response = $db -> prepare($max_query);
+    $response -> execute();
+    $max_value = $response -> fetchAll();
+    $new_id = intval($max_value[0][0]) + 1;
+    $insert_query = "INSERT INTO Reservas
+                     VALUES ($new_id, $user_id, $habid_required, '$today', '$final_date')";
+    $insert_ = $db -> prepare($insert_query);
+    $insert_ -> execute();
 ?>
-<br>
-<a href="../views/reserve_room.php">Atras</a>
-
-
+<h2>Se Ha Efectuado La Reserva Con Éxito!</h2>
+<body>
+<br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action="show_hotels.php" method="post">
+            <input type="submit" value="Volver A Hoteles">
+      </ul>
+      </form>
+      <ul class="actions">
+          <form action="../views/main.php" method="post">
+            <input type="submit" value="Volver A La Página Principal">
+      </ul>
+      </form>
+    </div>
+</body>
