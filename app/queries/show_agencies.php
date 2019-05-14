@@ -5,11 +5,21 @@
         <h2><strong>Agencias</strong>
         <br/></h2>
         <p>Haz click a la agencia para ver los tours que ofrece.</p>
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline" action="show_agencies.php" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" 
+                style="color:black" name="limitacion">
+                <input name="submit" type="submit">
+            </form>
+        </nav>
     </section>
 
 <?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
 <?php
-$query = "SELECT nombre, direccion, telefono, aid FROM Agencias";
+if (isset($_POST['submit'])) {
+    $limitacion = $_POST["limitacion"];
+    $query = "SELECT nombre, direccion, telefono, aid FROM Agencias WHERE nombre LIKE '%$limitacion%'";
+} else {$query = "SELECT nombre, direccion, telefono, aid FROM Agencias";}
 $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
 $nr=pg_num_rows($resultado);
 if ($nr>0) {

@@ -5,11 +5,21 @@
         <h2><strong>Viñas</strong>
         <br/></h2>
         <p>Haz click en la viña para ver sus variedades de vinos.</p>
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline" action="show_vineyards.php" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" 
+                style="color:black" name="limitacion">
+                <input name="submit" type="submit">
+            </form>
+        </nav>
     </section>
 
 <?php require_once ("../config/conexion_grupo48.php"); $conexion=conectarBD();?>
 <?php
-$query = "SELECT vnombre, rid, vtelefono, vid FROM Vinas ORDER BY rid";
+if (isset($_POST['submit'])) {
+    $limitacion = $_POST["limitacion"];
+    $query = "SELECT vnombre, rid, vtelefono, vid FROM Vinas WHERE vnombre LIKE '%$limitacion%' ORDER BY rid";
+} else {$query = "SELECT vnombre, rid, vtelefono, vid FROM Vinas ORDER BY rid";}
 $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
 $nr=pg_num_rows($resultado);
 if ($nr>0) {

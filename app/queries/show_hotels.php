@@ -5,11 +5,21 @@
         <h2><strong>Hoteles</strong>
         <br/></h2>
         <p>Haz click al hotel para ver sus habitaciones.</p>
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline" action="show_hotels.php" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" 
+                style="color:black" name="limitacion">
+                <input name="submit" type="submit">
+            </form>
+        </nav>
     </section>
 
 <?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
 <?php
-$query = "SELECT nombre_hotel, direccion, rid, telefono, hid FROM Hoteles";
+if (isset($_POST['submit'])) {
+    $limitacion = $_POST["limitacion"];
+    $query = "SELECT nombre_hotel, direccion, rid, telefono, hid FROM Hoteles WHERE nombre_hotel LIKE '%$limitacion%'";
+} else {$query = "SELECT nombre_hotel, direccion, rid, telefono, hid FROM Hoteles";}
 $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
 $nr=pg_num_rows($resultado);
 if ($nr>0) {

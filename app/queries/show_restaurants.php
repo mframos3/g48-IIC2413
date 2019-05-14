@@ -17,11 +17,9 @@
 <?php require_once ("../config/conexion_grupo49.php"); $conexion=conectarBD();?>
 <?php
 if (isset($_POST['submit'])) {
-    echo "<h1>Apretaste submit</h1>";
     $limitacion = $_POST["limitacion"];
     $query = "SELECT nombre_restaurant, direccion, rid, telefono, restid FROM Restaurantes WHERE nombre_restaurant LIKE '%$limitacion%'";
-} else {echo "<h1>No apretaste submit</h1>";
-    $query = "SELECT nombre_restaurant, direccion, rid, telefono, restid FROM Restaurantes";}
+} else {$query = "SELECT nombre_restaurant, direccion, rid, telefono, restid FROM Restaurantes";}
 $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
 $nr=pg_num_rows($resultado);
 if ($nr>0) {
