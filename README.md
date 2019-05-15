@@ -6,7 +6,7 @@
 
 - La app también está respaldada en la carpeta 'Entrega3' dentro del directorio del grupo48 en el server, al igual que este README.
 
-- Se recomienda utilizar los botones presentes al final de las páginas para moverse entre ellas, ya que el uso del navegador para volver forzadamente atrás puede llevar a avisos de reenvío del formulario (requieren refrescar la página). También se recomienda el usar el botón de Cerrar Sesión en la página principal del usuario cuando se desee salir de la cuenta, en vez de poner directamente el link en el navegador o forzar el ir hacia atrás.
+- Se recomienda utilizar los botones presentes al final de las páginas para moverse entre ellas, ya que el uso del navegador para volver forzadamente hacia atrás puede llevar a avisos de reenvío del formulario (requieren refrescar la página). También se recomienda el usar el botón de Cerrar Sesión en la página principal del usuario cuando se desee salir de la cuenta, en vez de poner directamente el link en el navegador o forzar el ir hacia atrás.
   
 - Según lo entendido al leer el apartado de Login en el enunciado, no se consideró el registro de nuevos usuarios en la aplicación (Sign Up), sino que se utilizaron todos los que ya estaban en la base de datos desde la entrega anterior (se asumieron previamente registrados), agregándoles la contraseña '123456' por simpleza (misma para todos). De esta manera, se puede Iniciar Sesión con cualquiera de los usuarios presentes en la BDD de la Entrega 2, utilizando su correo y la contraseña indicada anteriormente. Adicionalmente, se agregó un usuario para poder testear sin afectar a los que ya estaban, que posee de correo 'example@example.cl' y de contraseña '123456'.
 
