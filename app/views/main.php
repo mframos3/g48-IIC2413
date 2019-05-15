@@ -2,11 +2,10 @@
 	<body>
 		<!-- Banner -->
 		<section id="banner">
-			<h2><strong>Dirección Secreta de Turismo 
-								<?php session_start(); 
-								$current_mail = $_SESSION['current_user_mail'];
-                echo "(".$current_mail.")"; ?> </strong>
+			<h2><strong>Dirección Secreta de Turismo</strong>
 			<br/></h2>
+			<p><?php session_start(); $current_mail = $_SESSION['current_user_mail']; 
+			echo "(".$current_mail.")"; ?></p>
             <div class="inner">
 				<form action="profile.php" method="post">
 					<input type="submit" value="Perfil">
