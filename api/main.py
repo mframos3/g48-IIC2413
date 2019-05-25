@@ -14,7 +14,7 @@ atexit.register(mongod.kill)
 
 client = MongoClient('localhost')
 
-db = client["database"]
+db = client["local"]
 
 messages = db.messages
 
@@ -35,7 +35,7 @@ def get_message(mid):
     return json.jsonify(msgs)
 
 @app.route("/messages", methods=['POST'])
-def create_user():
+def create_message():
 
     data = {key: request.json[key] for key in MESSAGES_KEYS}
 
