@@ -2,9 +2,9 @@
 
 <body>
     <section id="banner">
-        <h2><strong>Información del tour</strong>
+        <h2><strong>Información del Tour</strong>
         <br/></h2>
-        <p>Viñas y vinos</p>
+        <p>Viñas y Vinos</p>
     </section>
     <table>
     <tr>   
@@ -30,7 +30,7 @@
                 echo "<td>".$filas["vtelefono"]."</td></tr>";
                 } echo "</tbody></table></div></td</tr></table>";
     } else {echo "No hay datos";} 
-    $query = "SELECT V.vino_nombre, V.cepa FROM VinosDegustados AS VD, Vinos AS V 
+    $query = "SELECT DISTINCT V.vino_nombre, V.cepa FROM VinosDegustados AS VD, Vinos AS V 
     WHERE VD.vino_id = V.vino_id AND VD.tid = $tid";
     $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
     $nr=pg_num_rows($resultado);
@@ -50,5 +50,12 @@
     ?>
     </tr>
     </table>
-
-<?php include('../templates/footer.html'); ?>
+    <br><br>
+    <div class="12u$">
+      <ul class="actions">
+          <form action="show_enotours.php" method="post">
+            <input type="submit" value="Volver", style="background:lightblue">
+      </ul>
+      </form>
+    </div>
+</body>

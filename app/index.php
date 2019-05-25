@@ -1,4 +1,10 @@
 <!DOCTYPE HTML>
+<?php 
+session_start();
+unset($_SESSION["current_user_id"]);
+unset($_SESSION["current_user_mail"]);
+unset($_SESSION["current_user_name"]);
+?>
 <!--
 	Typify by TEMPLATED
 	templated.co @templatedco
@@ -6,7 +12,7 @@
 -->
 <html>
 	<head>
-		<title>Entrega 2 Bases de Datos</title>
+		<title>Entrega 3 Bases de Datos</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -16,50 +22,52 @@
 	</head>
 	<body>
 
-		
-
 		<!-- Banner -->
 		<section id="banner">
 			<h2><strong>Dirección Secreta de Turismo</strong>
 			<br/></h2>
 			<p>Grupo48</p>
+			<div class="inner">
+				<form action="views/login.php" method="post">
+					<input type="submit" value="Iniciar Sesión">
+				</form>
 		</section>
 
 		<!-- One -->
 		<section id="one" class="wrapper special">
 			<div class="inner">
 				<div class="features">
-					<div class="feature">
+					<div class="feature", style="background:lightcoral">
 						<p>Descubre restaurantes y conoce todos sus platos!</p>
 						<form action="queries/show_restaurants.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
-					<div class="feature">
+					<div class="feature", style="background:lightblue">
 						<p>Conoce todas las agencias de turismo y los tours que ofrecen!</p>
 						<form action="queries/show_agencies.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
-					<div class="feature">
+					<div class="feature", style="background:plum">
 							<p>Busca tus vinos favoritos en las viñas del país!</p>
 							<form action="queries/show_vineyards.php" method="post">
 								<input type="submit" value="Buscar">
 							</form>
 						</div>
-					<div class="feature">
+					<div class="feature", style="background:lightsalmon">
 						<p>Elige tu tour de enoturismo ideal para conocer las viñas y vinos que quieras!</p>
 						<form action="queries/show_enotours.php" method="post">
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
-					<div class="feature">
+					<div class="feature", style="background:lightgreen">
 							<p>Infórmate de los senderos y atractivos de nuestros parques nacionales!</p>
 							<form action="queries/show_parks.php" method="post">
 								<input type="submit" value="Buscar">
 							</form>
 						</div>
-					<div class="feature">
+					<div class="feature", style="background:rgb(252, 252, 86)">
 						<p>Averigua sobre hoteles y sus habitaciones!</p>
 						<form action="queries/show_hotels.php" method="post">
 							<input type="submit" value="Buscar">
