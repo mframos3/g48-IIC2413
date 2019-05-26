@@ -60,6 +60,10 @@ def delete_message(mid):
     message = f'El mensaje con ID {mid} ha sido eliminado!'
     return json.jsonify({'result': 'success', 'message': message})
 
+@app.route('/users/<int:uid>', methods=["GET"])
+def get_user():
+    pass
+
 
 if os.name == 'nt':
     app.run()
