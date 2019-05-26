@@ -60,11 +60,21 @@ def delete_message(mid):
     message = f'El mensaje con ID {mid} ha sido eliminado!'
     return json.jsonify({'result': 'success', 'message': message})
 
-@app.route('/users/<int:uid>', methods=["GET"])
+@app.route('/users/<int:uid>')
 def get_user(uid):
-    msgs = list(users.find({"uid": uid}))
+    user = list(users.find({"uid": uid}, {"_id":0}))
+    return json.jsonify(user)
+
+@app.route('/communication/<int:uid_1>/<int:uid_2>')
+def get_communicaton(uid_1, uid_2):
+    msgs = list(messages.find(
+        {
+        '$or':[
+            {'$and':[{'sender':uid_1},{'receptant': uid_2}]},
+            {'$and':[{'sender':uid_2},{'receptant': uid_1}]}
+            ]
+        }, 
+        {'_id': 0}))
     return json.jsonify(msgs)
-
-
 if os.name == 'nt':
     app.run()
