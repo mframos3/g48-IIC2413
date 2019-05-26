@@ -62,7 +62,7 @@ def delete_message(mid):
 
 @app.route('/users/<int:uid>', methods=["GET"])
 def get_user(uid):
-    msgs = list(users.find({"uid": uid))
+    msgs = list(users.find({"uid": uid}))
     return json.jsonify(msgs)
 
 
