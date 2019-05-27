@@ -18,6 +18,8 @@ messages = db.messages
 
 users = db.users
 
+messages.create_index([('message', 'text')])
+
 app = Flask(__name__)
 
 
@@ -28,8 +30,23 @@ def home():
 
 @app.route("/messages")
 def get_messages():
-    # Aquí agregar después filtros de búsqueda usando funciones de mongodb
-    output = [msg for msg in messages.find({}, {"_id": 0})]
+    parameters = request.json
+    required = parameters['required'] if 'required' in parameters else []
+    prohibited = parameters['prohibited'] if 'prohibited' in parameters else []
+    # desirable = parameters['desirable'] if 'desirable' in parameters else []
+    filtered = ""
+    for r in required:
+        filtered += f"\"{r}\" "
+
+    # Rellenar con un if para agregar las palabras deseadas
+
+    if filtered:
+        for p in prohibited:
+            filtered += f"-{p} "
+        result = messages.find({"$text": {"$search": filtered}}, {"_id": 0})
+    else:
+        result = messages.find({}, {"_id": 0})
+    output = [msg for msg in result]
     return json.jsonify(output)
 
 
