@@ -38,7 +38,7 @@ def get_messages():
     for r in required:
         filtered += f"\"{r}\" "
 
-    # Rellenar con un if para agregar las palabras deseadas
+    # Rellenar con un if para agregar las palabras deseadas al string 'filtered'
 
     if filtered:
         for p in prohibited:
@@ -77,21 +77,39 @@ def delete_message(mid):
     message = f'El mensaje con ID {mid} ha sido eliminado!'
     return json.jsonify({'result': 'success', 'message': message})
 
+
 @app.route('/users/<int:uid>')
 def get_user(uid):
-    user = list(users.find({"uid": uid}, {"_id":0}))
+    user = list(users.find({"uid": uid}, {"_id": 0}))
+    parameters = request.json
+    required = parameters['required'] if 'required' in parameters else []
+    prohibited = parameters['prohibited'] if 'prohibited' in parameters else []
+    # desirable = parameters['desirable'] if 'desirable' in parameters else []
+    filtered = ""
+    for r in required:
+        filtered += f"\"{r}\" "
+
+    # Rellenar con un if para agregar las palabras deseadas al string 'filtered'
+
+    if filtered:
+        for p in prohibited:
+            filtered += f"-{p} "
+        result = messages.find({"$text": {"$search": filtered},
+                                "sender": uid}, {"_id": 0})
+    else:
+        result = messages.find({"sender": uid}, {"_id": 0})
+    user_messages = [msg for msg in result]
+    user[0]['messages'] = user_messages
     return json.jsonify(user)
 
+
 @app.route('/communication/<int:uid_1>/<int:uid_2>')
-def get_communicaton(uid_1, uid_2):
-    msgs = list(messages.find(
-        {
-        '$or':[
-            {'$and':[{'sender':uid_1},{'receptant': uid_2}]},
-            {'$and':[{'sender':uid_2},{'receptant': uid_1}]}
-            ]
-        }, 
-        {'_id': 0}))
+def get_communication(uid_1, uid_2):
+    msgs = list(messages.find({'$or': [
+        {'$and': [{'sender': uid_1}, {'receptant': uid_2}]},
+        {'$and': [{'sender': uid_2}, {'receptant': uid_1}]}]}, {'_id': 0}))
     return json.jsonify(msgs)
+
+
 if os.name == 'nt':
     app.run()
