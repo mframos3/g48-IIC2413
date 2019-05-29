@@ -33,11 +33,13 @@ def get_messages():
     parameters = request.json
     required = parameters['required'] if 'required' in parameters else []
     prohibited = parameters['prohibited'] if 'prohibited' in parameters else []
-    # desirable = parameters['desirable'] if 'desirable' in parameters else []
+    desirable = parameters['desirable'] if 'desirable' in parameters else []
     filtered = ""
     for r in required:
         filtered += f"\"{r}\" "
-
+    
+    for d in desirable:
+        filtered += f"{d} "
     # Rellenar con un if para agregar las palabras deseadas al string 'filtered'
 
     if filtered:
