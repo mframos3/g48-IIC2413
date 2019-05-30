@@ -30,18 +30,20 @@ def home():
 
 @app.route("/messages")
 def get_messages():
+    required = []
+    prohibited = []
+    desirable = []
     parameters = request.json
-    required = parameters['required'] if 'required' in parameters else []
-    prohibited = parameters['prohibited'] if 'prohibited' in parameters else []
-    desirable = parameters['desirable'] if 'desirable' in parameters else []
+    if parameters:
+        required = parameters['required'] if 'required' in parameters else []
+        prohibited = parameters['prohibited'] if 'prohibited' in parameters \
+            else []
+        desirable = parameters['desirable'] if 'desirable' in parameters else []
     filtered = ""
     for r in required:
         filtered += f"\"{r}\" "
-    
     for d in desirable:
         filtered += f"{d} "
-    # Rellenar con un if para agregar las palabras deseadas al string 'filtered'
-
     if filtered:
         for p in prohibited:
             filtered += f"-{p} "
@@ -83,16 +85,20 @@ def delete_message(mid):
 @app.route('/users/<int:uid>')
 def get_user(uid):
     user = list(users.find({"uid": uid}, {"_id": 0}))
+    required = []
+    prohibited = []
+    desirable = []
     parameters = request.json
-    required = parameters['required'] if 'required' in parameters else []
-    prohibited = parameters['prohibited'] if 'prohibited' in parameters else []
-    # desirable = parameters['desirable'] if 'desirable' in parameters else []
+    if parameters:
+        required = parameters['required'] if 'required' in parameters else []
+        prohibited = parameters['prohibited'] if 'prohibited' in parameters \
+            else []
+        desirable = parameters['desirable'] if 'desirable' in parameters else []
     filtered = ""
     for r in required:
         filtered += f"\"{r}\" "
-
-    # Rellenar con un if para agregar las palabras deseadas al string 'filtered'
-
+    for d in desirable:
+        filtered += f"{d} "
     if filtered:
         for p in prohibited:
             filtered += f"-{p} "
