@@ -1,4 +1,4 @@
-<?php include('../templates/header.html');   
+<?php include('../templates/header.html');
 session_start();
 ?>
 
@@ -9,7 +9,7 @@ session_start();
         <p>Haz click en cada Hotel para ver sus Habitaciones.</p>
         <nav class="navbar navbar-light bg-light">
             <form class="form-inline" action="show_hotels.php" method="post">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" 
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                 style="color:black" name="limitacion">
                 <input name="submit" type="submit">
             </form>

@@ -31,6 +31,9 @@ unset($_SESSION["current_user_name"]);
 				<form action="views/login.php" method="post">
 					<input type="submit" value="Iniciar Sesión">
 				</form>
+				<form action="views/stat1.php" method="post">
+					<input type="submit" value="Ver Estadísticas">
+				</form>
 		</section>
 
 		<!-- One -->
