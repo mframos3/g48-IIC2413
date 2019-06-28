@@ -6,14 +6,17 @@
 			<br/></h2>
 			<p><?php session_start(); $current_mail = $_SESSION['current_user_mail']; 
 			echo "(".$current_mail.")"; ?></p>
-            <div class="inner">
+            <div class="inner", style="display:flex; flex-direction: row; justify-content: space-around; align-items: center">
 				<form action="profile.php" method="post">
 					<input type="submit" value="Perfil">
 				</form>
-			<div class="inner">
+				<form action="messages.php" method="post">
+					<input type="submit" value="Mensajería">
+				</form>
 				<form action="logout.php" method="post">
 					<input type="submit" value="Cerrar Sesión">
 				</form>
+			</div>
         </section>
 
 		<!-- One -->
