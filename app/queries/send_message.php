@@ -5,16 +5,22 @@
         <h2><strong>Enviar Mensaje</strong>
         <br/></h2>
     </section>
-<?php
-require_once ("../config/conexion_grupo48.php"); $conexion=conectarBD();
-session_start();
-$uid = intval($_SESSION["current_user_id"]);
-# Form para mandar un mensaje (se pone email receptor y se consulta por su id, 
-# si no existe no se hace nada y se indica, en caso contrario se manda el mensaje) 
-
-#$query = "SELECT * FROM Enoturismo ORDER BY tnombre";
-#$resultado= pg_query($conexion, $query) or die ("Error en la consulta");
-?>
+    <section id="one" class="wrapper special">
+    <div class="inner">
+        <div class="features">
+            <div class="feature", style="background:lightblue">
+                <form action="api_send.php" method="post">
+                <b>Email De Destino:</b>
+                <input type="text" name="mail_input">
+                <b>Mensaje:</b>
+                <input type="text" name="message_input">
+                <br>
+                <input type="submit" value="Enviar">
+                </form>
+            </div>	
+        </div>
+    </div>
+    </section>
 
 <br><br>
   <div class="12u$">
