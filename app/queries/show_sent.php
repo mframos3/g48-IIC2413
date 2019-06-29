@@ -41,6 +41,22 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Content-Length: ' . strlen($data_json))                                                                       
 );                                                   
 $api_result = json_decode(curl_exec($ch), true)[0]['sent_messages'];
+# Con esto se ordena por fecha
+$sortArray = array();
+
+foreach($api_result as $r){
+    foreach($r as $key=>$value){
+        if(!isset($sortArray[$key])){
+            $sortArray[$key] = array();
+        }
+        $sortArray[$key][] = $value;
+    }
+}
+
+$orderby = "date"; //change this to whatever key you want from the array
+
+array_multisort($sortArray[$orderby],SORT_DESC,$api_result);
+
 if (sizeof($api_result) > 0) {
   echo "<div class='table-wrapper'>
         <table>
