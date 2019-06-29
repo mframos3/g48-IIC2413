@@ -3,7 +3,6 @@
 <body>
     <section id="banner">
         <h2><strong>Recibidos</strong>
-        <h3>Hola mundo</h3>
         <br/></h2>
     </section>
 <?php
