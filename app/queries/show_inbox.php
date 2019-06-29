@@ -7,6 +7,8 @@
         <br/></h2>
     </section>
 <?php
+
+
 session_start(); 
 $uid = intval($_SESSION["current_user_id"]);
 $data = array("required" => array(), "desirable" => array(), "prohibited" => array());                                                                    
@@ -25,7 +27,6 @@ if (sizeof($api_result) > 0) {
         <table>
           <thead>
           <tr><th>De</th>
-          <th>Para</th>
           <th>Mensaje</th>
           <th>Fecha de Envío</th>
           <th>Latitud</th>
@@ -33,8 +34,15 @@ if (sizeof($api_result) > 0) {
           </thead>";
   echo "<tbody>";
       foreach ($api_result as $r) {
-          echo "<tr><td>".$r["sender"]."</td>";
-          echo "<td>".$r["receptant"]."</td>";
+        require("../config/conexionv2_grupo48.php");
+        $sender = $r["sender"];
+        $query = "SELECT correo
+              FROM Usuarios 
+              WHERE uid = $sender";
+        $result = $db -> prepare($query);
+	      $result -> execute();
+        $mail = $result -> fetchAll();
+          echo "<tr><td>".$mail[0][0]."</td>";
           echo "<td>".$r["message"]."</td>";
           echo "<td>".$r["date"]."</td>";
           echo "<td>".$r["lat"]."</td>";
