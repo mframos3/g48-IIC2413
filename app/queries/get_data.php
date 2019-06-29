@@ -16,6 +16,8 @@
         $_SESSION["current_user_id"] = $cantidad[0][0];
         $_SESSION["current_user_mail"] = strval($mail);
         $_SESSION["current_user_name"] = $cantidad[0][1];
+        $_SESSION["current_user_date"] = $cantidad[0][2];
+        $_SESSION["current_user_country"] = $cantidad[0][4];
         header ("Location: ../views/main.php");
     }
     else { ?>

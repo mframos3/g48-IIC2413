@@ -69,6 +69,21 @@
             echo "<h2>No Existe Ningún Usuario Con El Email Ingresado!</h2>";
         }
     }
+    $sortArray = array();
+
+    foreach($api_result as $r){
+        foreach($r as $key=>$value){
+            if(!isset($sortArray[$key])){
+                $sortArray[$key] = array();
+            }
+            $sortArray[$key][] = $value;
+        }
+    }
+
+    $orderby = "date";
+
+    array_multisort($sortArray[$orderby], SORT_DESC, $api_result);
+    
     if (sizeof($api_result) > 0) {
         echo "<div class='table-wrapper'>
               <table>
@@ -82,8 +97,19 @@
                 </thead>";
         echo "<tbody>";
             foreach ($api_result as $r) {
-                echo "<tr><td>".$r["sender"]."</td>";
-                echo "<td>".$r["receptant"]."</td>";
+                require("../config/conexionv2_grupo48.php");
+                $sender = $r["sender"];
+                $receptant = $r["receptant"];
+                $query_sender = "SELECT correo FROM Usuarios WHERE uid = $sender";
+                $query_receptant = "SELECT correo FROM Usuarios WHERE uid = $receptant";
+                $result_sender = $db -> prepare($query_sender);
+                $result_sender -> execute();
+                $mail_sender = $result_sender -> fetchAll();
+                $result_receptant = $db -> prepare($query_receptant);
+                $result_receptant -> execute();
+                $mail_receptant = $result_receptant -> fetchAll();
+                echo "<tr><td>".$mail_sender[0][0]."</td>";
+                echo "<td>".$mail_receptant[0][0]."</td>";
                 echo "<td>".$r["message"]."</td>";
                 echo "<td>".$r["date"]."</td>";
                 echo "<td>".$r["lat"]."</td>";

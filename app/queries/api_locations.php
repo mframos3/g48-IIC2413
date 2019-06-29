@@ -21,6 +21,20 @@
         'Content-Length: ' . strlen($data_json))                                                                       
     );                                                                                                                                                                                                                        
     $api_result = json_decode(curl_exec($ch), true)[0]['sent_messages'];
+    $sortArray = array();
+
+    foreach($api_result as $r){
+        foreach($r as $key=>$value){
+            if(!isset($sortArray[$key])){
+                $sortArray[$key] = array();
+            }
+            $sortArray[$key][] = $value;
+        }
+    }
+
+    $orderby = "date";
+
+    array_multisort($sortArray[$orderby], SORT_DESC, $api_result);
     
     if (sizeof($api_result) > 0) {
         echo "<div class='table-wrapper'>
@@ -34,7 +48,13 @@
         echo "<tbody>";
             foreach ($api_result as $r) {
                 if (($initial_date <= $r["date"]) and ($r["date"] <= $final_date)) {
-                    echo "<td>".$r["receptant"]."</td>";
+                    require("../config/conexionv2_grupo48.php");
+                    $receptant = $r["receptant"];
+                    $query = "SELECT correo FROM Usuarios WHERE uid = $receptant";
+                    $result = $db -> prepare($query);
+                    $result -> execute();
+                    $mail = $result -> fetchAll();
+                    echo "<tr><td>".$mail[0][0]."</td>";
                     echo "<td>".$r["message"]."</td>";
                     echo "<td>".$r["date"]."</td>";
                     $lat = strval($r["lat"]);
