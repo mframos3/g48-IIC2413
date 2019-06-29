@@ -2,7 +2,7 @@
 
 <body>
     <section id="banner">
-        <h2><strong>Buscar Lugares Según Fecha De Creación De Mensajes</strong>
+        <h2><strong>Buscar Lugares Según Mensajes Enviados</strong>
         <br/></h2>
     </section>
 <?php

@@ -38,8 +38,8 @@
 <br><br>
     <div class="12u$">
       <ul class="actions">
-          <form action="../views/messages.php" method="post">
-            <input type="submit" value="Volver A Mensajería", style="background:lightblue">
+          <form action="send_message.php" method="post">
+            <input type="submit" value="Volver", style="background:lightblue">
       </ul>
       </form>
       <ul class="actions">
