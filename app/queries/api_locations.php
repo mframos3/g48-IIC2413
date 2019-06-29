@@ -1,7 +1,7 @@
 <?php include('../templates/header.html');   ?>
 <body>
     <section id="banner">
-        <h2><strong>Lugares</strong>
+        <h2><strong>Lugares Según Mensajes Enviados</strong>
         <br/></h2>
     </section>
 <?php
@@ -33,37 +33,28 @@
     }
 
     $orderby = "date";
-
-    array_multisort($sortArray[$orderby], SORT_DESC, $api_result);
+    if (sizeof($api_result) > 0) {
+        array_multisort($sortArray[$orderby], SORT_DESC, $api_result);
+    }
     
     if (sizeof($api_result) > 0) {
         echo "<div class='table-wrapper'>
               <table>
                 <thead>
-                <tr><th>Para</th>
-                <th>Mensaje</th>
-                <th>Fecha de Envío</th>
-                <th>Mapa</th></tr>
+                <tr><th>Fecha de Envío</th>
+                <th>Lugar de Envío</th></tr>
                 </thead>";
         echo "<tbody>";
             foreach ($api_result as $r) {
                 if (($initial_date <= $r["date"]) and ($r["date"] <= $final_date)) {
-                    require("../config/conexionv2_grupo48.php");
-                    $receptant = $r["receptant"];
-                    $query = "SELECT correo FROM Usuarios WHERE uid = $receptant";
-                    $result = $db -> prepare($query);
-                    $result -> execute();
-                    $mail = $result -> fetchAll();
-                    echo "<tr><td>".$mail[0][0]."</td>";
-                    echo "<td>".$r["message"]."</td>";
-                    echo "<td>".$r["date"]."</td>";
+                    echo "<tr><td>".$r["date"]."</td>";
                     $lat = strval($r["lat"]);
                     $long = strval($r["long"]);
                     echo "<td>"."<div style='width: 90%'><iframe width='90%' height='480' 
                     src='https://maps.google.com/maps?width=90%&height=480&hl=es&q=$lat,$long
                     &ie=UTF8&t=&z=14&iwloc=B&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'></iframe>
                     </div>"."</td></tr>";
-                }#ajustar mapas
+                }
                 } echo "</tbody></table></div>";
     } else {echo "No hay datos!";}
 ?>

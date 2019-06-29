@@ -81,8 +81,9 @@
     }
 
     $orderby = "date";
-
-    array_multisort($sortArray[$orderby], SORT_DESC, $api_result);
+    if (sizeof($api_result) > 0) {
+        array_multisort($sortArray[$orderby], SORT_DESC, $api_result);
+    }
     
     if (sizeof($api_result) > 0) {
         echo "<div class='table-wrapper'>

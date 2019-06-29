@@ -2,7 +2,7 @@
 
 <body>
     <section id="banner">
-        <h2><strong>Buscar Lugares Según Mensajes Enviados</strong>
+        <h2><strong>Lugares Según Mensajes Enviados</strong>
         <br/></h2>
         <p>Ingresa un rango de fechas para mostrar los lugares desde los que enviaste mensajes entre dichas fechas!</p>
     </section>

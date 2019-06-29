@@ -34,7 +34,7 @@
 						</form>
 					</div>
                     <div class="feature", style="background:lightgreen">
-						<p>Buscar Lugares Según Mensajes Enviados</p>
+						<p>Ver Lugares Según Mensajes Enviados</p>
 						<form action="../queries/locations.php" method="post">
 							<input type="submit" value="Ir">
 						</form>

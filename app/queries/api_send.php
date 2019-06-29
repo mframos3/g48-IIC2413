@@ -7,8 +7,11 @@
     $today = date("Y-m-d");
     $mail = strval($_POST["mail_input"]);
     $message = strval($_POST["message_input"]);
-    $lat = 33.34; # Cambiar
-    $long = 33.34; # Cambiar
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+    $location = explode(",", $details->loc);
+    $lat = floatval($location[0]);
+    $long = floatval($location[1]);
     $user_query = "SELECT uid FROM Usuarios WHERE correo = '$mail'";
     $response = $db -> prepare($user_query);
     $response -> execute();

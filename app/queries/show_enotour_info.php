@@ -11,8 +11,8 @@
     <?php require_once ("../config/conexion_grupo48.php"); $conexion=conectarBD();?>
     <?php
     $tid = $_GET["tid"];
-    $query = "SELECT V.vnombre, V.rid, V.vtelefono FROM VinasVisitadas AS VV, Vinas AS V 
-    WHERE VV.vid = V.vid AND VV.tid = $tid";
+    $query = "SELECT V.vnombre, R.rnombre, V.vtelefono FROM VinasVisitadas AS VV, Vinas AS V, Regiones R
+    WHERE VV.vid = V.vid AND VV.tid = $tid AND V.rid = R.rid";
     $resultado=pg_query($conexion, $query) or die ("Error en la consulta");
     $nr=pg_num_rows($resultado);
     if ($nr>0) {
@@ -26,7 +26,7 @@
     echo "<tbody>";
             while($filas=pg_fetch_array($resultado)) {
                 echo "<td>".$filas["vnombre"]."</td>";
-                echo "<td>".$filas["rid"]."</td>";
+                echo "<td>".$filas["rnombre"]."</td>";
                 echo "<td>".$filas["vtelefono"]."</td></tr>";
                 } echo "</tbody></table></div></td</tr></table>";
     } else {echo "No hay datos";} 
