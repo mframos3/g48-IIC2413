@@ -2,7 +2,7 @@
 
 <body>
     <section id="banner">
-        <h2><strong>Resultados</strong>
+        <h2><strong>Resultados De La Búsqueda</strong>
         <br/></h2>
     </section>
 <?php

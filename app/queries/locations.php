@@ -4,33 +4,26 @@
     <section id="banner">
         <h2><strong>Buscar Lugares Según Mensajes Enviados</strong>
         <br/></h2>
+        <p>Ingresa un rango de fechas para mostrar los lugares desde los que enviaste mensajes entre dichas fechas!</p>
     </section>
-<?php
-session_start(); 
-$uid = intval($_SESSION["current_user_id"]);
+    <section id="one" class="wrapper special">
+    <div class="inner">
+        <div class="features">
+            <div class="feature", style="background:lightblue">
+                <form action="api_locations.php" method="post">
+                <b>Fecha Mínima:</b>
+                <input type="date" value="<?php echo date('Y-m-d'); ?>" name="initial_input">
+                <br><br>
+                <b>Fecha Máxima:</b>
+                <input type="date" value="<?php echo date('Y-m-d'); ?>" name="final_input">
+                <br><br>
+                <input type="submit" value="Buscar">
+                </form>
+            </div>	
+        </div>
+    </div>
+    </section>
 
-#$result = ;
-#$nr = pg_num_rows($result);
-#if ($nr>0) {
-    #echo "<div class='table-wrapper'>
-          #<table>
-            #<thead>
-            #<tr><th>Fecha Inicial</th>
-            #<th>Fecha Final</th>
-            #<th>Hotel</th>
-            #<th>Habitación</th>
-            #<th>Precio</th></tr>
-            #</thead>";
-  #echo "<tbody>";
-        #while($filas = pg_fetch_array($result)) {
-            #echo "<tr><td>".$filas["fecha_inicio"]."</td>";
-            #echo "<td>".$filas["fecha_fin"]."</td>";
-            #echo "<td>".$filas["nombre_hotel"]."</td>";
-            #echo "<td>".$filas["nombre_habitacion"]."</td>";
-            #echo "<td>".$filas["precio"]."</td></tr>";
-            #} echo "</tbody></table></div>";
-#} else {echo "No hay datos!";}
-?>
 <br><br>
   <div class="12u$">
       <ul class="actions">
