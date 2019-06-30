@@ -7,6 +7,16 @@
         <p><strong>Nombre: <?php session_start(); 
 								$current_name = $_SESSION['current_user_name'];
                 echo $current_name; ?> </strong></p>
+        <p><strong>Correo: <?php
+                    $current_mail = $_SESSION['current_user_mail'];
+                    echo $current_mail; ?> </strong></p>
+        <p><strong>Nacionalidad: <?php 
+                    $current_country = $_SESSION['current_user_country'];
+                    echo $current_country; ?> </strong></p>
+        <p><strong>Fecha de Nacimiento: <?php
+                    $current_date = $_SESSION['current_user_date'];
+                    echo $current_date; ?> </strong></p>
+
     </section>
     
     <section id="one" class="wrapper special">

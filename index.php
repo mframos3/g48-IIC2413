@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
-<?php
+
+<?php 
+
 session_start();
 unset($_SESSION["current_user_id"]);
 unset($_SESSION["current_user_mail"]);
 unset($_SESSION["current_user_name"]);
+unset($_SESSION["current_user_date"]);
+unset($_SESSION["current_user_country"]);
 ?>
 <!--
 	Typify by TEMPLATED
@@ -11,7 +15,6 @@ unset($_SESSION["current_user_name"]);
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-
 <head>
 	<title>Entrega 3 Bases de Datos</title>
 	<meta charset="utf-8" />
