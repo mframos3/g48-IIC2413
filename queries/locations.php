@@ -9,7 +9,7 @@
     <section id="one" class="wrapper special">
     <div class="inner">
         <div class="features">
-            <div class="feature", style="background:lightblue">
+            <div class="feature", style="background:lightseagreen">
                 <form action="api_locations.php" method="post">
                 <b>Fecha Mínima:</b>
                 <input type="date" value="<?php echo date('Y-m-d'); ?>" name="initial_input">

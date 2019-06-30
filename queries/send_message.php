@@ -8,7 +8,7 @@
     <section id="one" class="wrapper special">
     <div class="inner">
         <div class="features">
-            <div class="feature", style="background:lightblue">
+            <div class="feature", style="background:lightseagreen">
                 <form action="api_send.php" method="post">
                 <b>Email De Destino:</b>
                 <input type="text" name="mail_input">

@@ -59,6 +59,30 @@
 							<input type="submit" value="Buscar">
 						</form>
 					</div>
+					<div class="feature" , style="background:lightseagreen">
+					<p>Ve el número de reservas por región!</p>
+					<form action="stat1.php" method="post">
+						<input type="submit" value="Ver">
+					</form>
+					</div>
+					<div class="feature" , style="background:lightseagreen">
+						<p>Ve la cantidad de cepas de vino por región!</p>
+						<form action="stat2.php" method="post">
+							<input type="submit" value="Ver">
+						</form>
+					</div>
+					<div class="feature" , style="background:lightseagreen">
+						<p>Ve las cepas de vino que hay en nuestro país!</p>
+						<form action="stat3.php" method="post">
+							<input type="submit" value="Ver">
+						</form>
+					</div>
+					<div class="feature" , style="background:lightseagreen">
+						<p>Ve la cantidad de senderos por región!</p>
+						<form action="stat4.php" method="post">
+							<input type="submit" value="Ver">
+						</form>
+					</div>
 				</div>
 			</div>
         </section>

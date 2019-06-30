@@ -4,16 +4,22 @@
 		    <h2><strong>Dirección Secreta de Turismo</strong>
 			<br/> Estadísticas</h2>
         </section>
-        <?php require_once ("../config/conexion_grupo48.php"); $conexion = conectarBD();?>
+        <?php require_once ("../config/conexion_grupo48.php"); $conexion = conectarBD();
+        session_start();
+        if (isset($_SESSION["current_user_id"])) {
+          $s = "main.php";
+        } else {
+          $s = "../index.php";}
+        ?>
         <br>
-        <h1><strong>Gráfico de torta: Proporción cepas del país</strong></h1>
+        <h1><strong>Gráfico de Torta: Proporción de Cepas de Vino del País</strong></h1>
         <br>
         <div id="chart"></div>
 		<footer id="footer">
             <div class="copyright">
                 &copy; Untitled. Design: <a href="http://templated.co/">TEMPLATED</a>.
                 <ul class="actions">
-                    <form action="../index.php" method="post">
+                    <form action=<?php echo $s?> method="post">
                     <input type="submit" value="Volver", style="background:lightblue">
                 </ul>
             </div>
@@ -56,4 +62,4 @@
     }
 });
         </script>
-	</body>
+    </body>

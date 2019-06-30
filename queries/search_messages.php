@@ -10,7 +10,7 @@
     <section id="one" class="wrapper special">
     <div class="inner">
         <div class="features">
-            <div class="feature", style="background:lightblue">
+            <div class="feature", style="background:lightseagreen">
                 <form action="api_search.php" method="post">
                 <b>Email de Origen (dejar vacío para buscar en todos los mensajes):</b>
                 <input type="text" name="user_input">

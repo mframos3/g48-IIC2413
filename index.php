@@ -78,26 +78,26 @@ unset($_SESSION["current_user_country"]);
 						<input type="submit" value="Buscar">
 					</form>
 				</div>
-				<div class="feature" , style="background:lightblue">
-					<p>Ve el número de reservas por región</p>
+				<div class="feature" , style="background:lightseagreen">
+					<p>Ve el número de reservas por región!</p>
 					<form action="views/stat1.php" method="post">
 						<input type="submit" value="Ver">
 					</form>
 				</div>
-				<div class="feature" , style="background:lightblue">
-					<p>Ve la cantidad de cepas por región</p>
+				<div class="feature" , style="background:lightseagreen">
+					<p>Ve la cantidad de cepas de vino por región!</p>
 					<form action="views/stat2.php" method="post">
 						<input type="submit" value="Ver">
 					</form>
 				</div>
-				<div class="feature" , style="background:lightblue">
-					<p>Ve las cepas que hay en nuestro país</p>
+				<div class="feature" , style="background:lightseagreen">
+					<p>Ve las cepas de vino que hay en nuestro país!</p>
 					<form action="views/stat3.php" method="post">
 						<input type="submit" value="Ver">
 					</form>
 				</div>
-				<div class="feature" , style="background:lightblue">
-					<p>Ve los senderos por región</p>
+				<div class="feature" , style="background:lightseagreen">
+					<p>Ve la cantidad de senderos por región!</p>
 					<form action="views/stat4.php" method="post">
 						<input type="submit" value="Ver">
 					</form>
