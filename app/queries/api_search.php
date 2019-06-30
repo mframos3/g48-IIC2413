@@ -31,16 +31,16 @@
     $mode = strval($_POST["user_input"]);
 
     if ($mode == "") {
-        $data = array("required" => $required, "desirable" => $desirable, "prohibited" => $prohibited);                                                                    
-        $data_json = json_encode($data);                                                                                                                                                                                   
+        $data = array("required" => $required, "desirable" => $desirable, "prohibited" => $prohibited);                                                             
+        $data_json = json_encode($data);                                                                                                                                                  
         $ch = curl_init("https://api-g25.herokuapp.com/messages");                                                    
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");                                                                 
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);                                                                  
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
             'Content-Type: application/json',                                                                                
-            'Content-Length: ' . strlen($data_json))                                                                       
-        );                                                                                                                                                                                                                        
+            'Content-Length: ' . strlen($data_json))                                                                   
+        );                                                                                                                                                                                                                       
         $api_result = json_decode(curl_exec($ch), true);
 
     } 
@@ -69,6 +69,7 @@
             echo "<h2>No Existe Ningún Usuario Con El Email Ingresado!</h2>";
         }
     }
+
     $sortArray = array();
 
     foreach($api_result as $r){

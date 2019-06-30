@@ -50,8 +50,8 @@
                     echo "<tr><td>".$r["date"]."</td>";
                     $lat = strval($r["lat"]);
                     $long = strval($r["long"]);
-                    echo "<td>"."<div style='width: 90%'><iframe width='90%' height='480' 
-                    src='https://maps.google.com/maps?width=90%&height=480&hl=es&q=$lat,$long
+                    echo "<td>"."<div style='width: 80%'><iframe width='80%' height='426' 
+                    src='https://maps.google.com/maps?width=80%&height=426&hl=es&q=$lat,$long
                     &ie=UTF8&t=&z=14&iwloc=B&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'></iframe>
                     </div>"."</td></tr>";
                 }
